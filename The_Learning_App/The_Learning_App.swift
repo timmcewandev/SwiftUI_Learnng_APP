@@ -8,10 +8,11 @@
 import SwiftUI
 
 @main
-struct The_Learning_AppApp: App {
+struct The_Learning_App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .environmentObject(ContentModel())
         }
     }
 }
