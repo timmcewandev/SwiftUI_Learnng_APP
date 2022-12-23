@@ -6,8 +6,9 @@
 //
 
 import SwiftUI
-@EnvironmentObject model: ContentModel
+
 struct HomeView: View {
+    @EnvironmentObject var model: ContentModel
     var body: some View {
         Text("Hello, world!")
             .padding()
