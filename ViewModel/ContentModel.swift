@@ -9,5 +9,10 @@ import Foundation
 
 
 class ContentModel: ObservableObject {
-    
+    @Published var conentStore: [Module] = []
+    var styleData: Data?
+    init() {
+        self.conentStore = NetworkLayer.getInfo()
+        self.styleData = NetworkLayer.getStyleData()
+    }
 }
