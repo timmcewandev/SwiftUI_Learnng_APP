@@ -8,11 +8,6 @@
 import SwiftUI
 
 struct HomeViewRow: View {
-    var image: String
-    var title: String
-    var decription: String
-    var count: Int
-    var time: String
     @EnvironmentObject var model: ContentModel
     var body: some View {
         ZStack {
@@ -21,24 +16,20 @@ struct HomeViewRow: View {
                 .foregroundColor(.white)
                 .aspectRatio(CGSize(width: 335, height: 175), contentMode: .fit)
                 .shadow(radius: 5)
-            
-            HStack {
-                Spacer()
-                Image(image)
-                    .resizable()
-                    .frame(width: 100, height: 100)
-                    .aspectRatio(contentMode: .fit)
-                    .clipShape(Circle())
-                    .padding([.leading, .trailing])
-                Spacer()
+            ForEach(0..<model.conentStore.count, id: \.self) {index in
                 HStack {
+                    Image(model.conentStore[index].content.image)
+                        .resizable()
+                        .clipShape(Circle())
+                        .frame(width: 50, height: 50)
+                        .padding(.horizontal, 5)
                     VStack {
-                        Text(title)
+                        Text(model.conentStore[index].category)
                             .font(.headline)
                             .fontWeight(.bold)
                             .padding(.bottom, 3.0)
                         
-                        Text(decription)
+                        Text(model.conentStore[index].content.description)
                             .font(.footnote)
                             .fontWeight(.light)
                             .multilineTextAlignment(.leading)
@@ -46,29 +37,28 @@ struct HomeViewRow: View {
                         HStack {
                             Spacer()
                             Image(systemName: "clock")
-                            Text(time)
+                            Text(model.conentStore[index].content.time)
                                 .font(.caption)
                                 .fontWeight(.thin)
                             Spacer()
                             Image(systemName: "film")
-                            Text("\(count) lessons")
+                            Text("\(model.conentStore[index].content.lessons.count) lessons")
                                 .font(.caption)
                                 .fontWeight(.thin)
                             Spacer()
                         }.padding(.top)
                     }.padding(.trailing, 20)
                 }
-                Spacer()
             }
+            
         }
-        .padding(.all, 5)
+        .padding()
     }
 }
 
 struct HomeViewRow_Previews: PreviewProvider {
     
     static var previews: some View {
-        HomeViewRow(image: "swift", title: "Learn swift", decription: "You will learn enums and stuff", count: 10, time: "40 hours")
-            .environmentObject(ContentModel())
+        HomeViewRow()
     }
 }

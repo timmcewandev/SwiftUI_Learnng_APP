@@ -15,14 +15,14 @@ struct HomeView: View {
                 Text("What would you like to learn today")
                     .padding(.leading, 10)
                 ScrollView {
-                    LazyVStack {
-                        ForEach(model.conentStore) { module in
+                    VStack {
+                        ForEach(model.conentStore) { model in
                             VStack(spacing: 15.0) {
-                                HomeViewRow(image: module.content.image, title: module.category, decription: module.content.description, count: module.content.lessons.count, time: module.content.time)
-                                
-                                HomeViewRow(image: module.test.image, title: module.category, decription: module.content.description, count: module.content.lessons.count, time: module.content.time)
-                                
-                                
+                                NavigationLink {
+                                    HomeListView(model: model)
+                                } label: {
+                                    HomeViewRow()
+                                }.foregroundColor(.black)
                             }
                             
                         }
