@@ -3,12 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		84369D9C295A462500A71FB5 /* HomeViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84369D9B295A462500A71FB5 /* HomeViewRow.swift */; };
-		846E09EC295A6DE100EE4D34 /* HomeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E09EB295A6DE100EE4D34 /* HomeListView.swift */; };
+		846E09F3295CD63A00EE4D34 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E09F2295CD63A00EE4D34 /* Constants.swift */; };
 		848D33C62956601E00F242C4 /* The_Learning_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D33C52956601E00F242C4 /* The_Learning_App.swift */; };
 		848D33C82956601E00F242C4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D33C72956601E00F242C4 /* HomeView.swift */; };
 		848D33CA2956601F00F242C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848D33C92956601F00F242C4 /* Assets.xcassets */; };
@@ -18,11 +18,13 @@
 		848D33DF295664A200F242C4 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 848D33DD295664A200F242C4 /* data.json */; };
 		848D33E3295666E100F242C4 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D33E2295666E100F242C4 /* Module.swift */; };
 		848D33E529566B4A00F242C4 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D33E429566B4A00F242C4 /* NetworkLayer.swift */; };
+		8495DB45295D20A5003B5FE5 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846E09F0295CD32B00EE4D34 /* AVKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84369D9B295A462500A71FB5 /* HomeViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRow.swift; sourceTree = "<group>"; };
-		846E09EB295A6DE100EE4D34 /* HomeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListView.swift; sourceTree = "<group>"; };
+		846E09F0295CD32B00EE4D34 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		846E09F2295CD63A00EE4D34 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		848D33C22956601E00F242C4 /* The_Learning_App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = The_Learning_App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		848D33C52956601E00F242C4 /* The_Learning_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_Learning_App.swift; sourceTree = "<group>"; };
 		848D33C72956601E00F242C4 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -40,12 +42,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8495DB45295D20A5003B5FE5 /* AVKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		846E09EF295CD32B00EE4D34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				846E09F0295CD32B00EE4D34 /* AVKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		848D33B92956601E00F242C4 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +69,7 @@
 				848D33D42956609F00F242C4 /* Network */,
 				848D33D92956612600F242C4 /* Utilities */,
 				848D33C32956601E00F242C4 /* Products */,
+				846E09EF295CD32B00EE4D34 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				84369D9B295A462500A71FB5 /* HomeViewRow.swift */,
-				846E09EB295A6DE100EE4D34 /* HomeListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,6 +151,7 @@
 		848D33D92956612600F242C4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				846E09F2295CD63A00EE4D34 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -180,7 +192,7 @@
 				};
 			};
 			buildConfigurationList = 848D33BD2956601E00F242C4 /* Build configuration list for PBXProject "The_Learning_App" */;
-			compatibilityVersion = "Xcode 13.0";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -217,11 +229,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				848D33C82956601E00F242C4 /* HomeView.swift in Sources */,
-				846E09EC295A6DE100EE4D34 /* HomeListView.swift in Sources */,
 				848D33C62956601E00F242C4 /* The_Learning_App.swift in Sources */,
 				848D33DB2956619800F242C4 /* ContentModel.swift in Sources */,
 				848D33E529566B4A00F242C4 /* NetworkLayer.swift in Sources */,
 				84369D9C295A462500A71FB5 /* HomeViewRow.swift in Sources */,
+				846E09F3295CD63A00EE4D34 /* Constants.swift in Sources */,
 				848D33E3295666E100F242C4 /* Module.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

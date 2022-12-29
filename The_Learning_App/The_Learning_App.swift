@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import AVKit
 @main
 struct The_Learning_App: App {
     var body: some Scene {

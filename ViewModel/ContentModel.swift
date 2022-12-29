@@ -10,6 +10,8 @@ import Foundation
 
 class ContentModel: ObservableObject {
     @Published var conentStore: [Module] = []
+    @Published var currentModule: Module?
+    static var currentModuleIndex = 0
     var styleData: Data?
     init() {
         self.conentStore = NetworkLayer.getInfo()
