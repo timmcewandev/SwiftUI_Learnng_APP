@@ -19,6 +19,7 @@
 		848D33E3295666E100F242C4 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D33E2295666E100F242C4 /* Module.swift */; };
 		848D33E529566B4A00F242C4 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D33E429566B4A00F242C4 /* NetworkLayer.swift */; };
 		8495DB45295D20A5003B5FE5 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846E09F0295CD32B00EE4D34 /* AVKit.framework */; };
+		8499BA09296E4BDB00452333 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499BA08296E4BDB00452333 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		848D33DD295664A200F242C4 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		848D33E2295666E100F242C4 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
 		848D33E429566B4A00F242C4 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		8499BA08296E4BDB00452333 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		848D33D7295660A600F242C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8499BA08296E4BDB00452333 /* ContentView.swift */,
 				84369D9B295A462500A71FB5 /* HomeViewRow.swift */,
 			);
 			path = Views;
@@ -230,6 +233,7 @@
 			files = (
 				848D33C82956601E00F242C4 /* HomeView.swift in Sources */,
 				848D33C62956601E00F242C4 /* The_Learning_App.swift in Sources */,
+				8499BA09296E4BDB00452333 /* ContentView.swift in Sources */,
 				848D33DB2956619800F242C4 /* ContentModel.swift in Sources */,
 				848D33E529566B4A00F242C4 /* NetworkLayer.swift in Sources */,
 				84369D9C295A462500A71FB5 /* HomeViewRow.swift in Sources */,

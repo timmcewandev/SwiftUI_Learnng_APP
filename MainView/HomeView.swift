@@ -17,13 +17,17 @@ struct HomeView: View {
                 ScrollView {
                     LazyVStack {
                         ForEach(model.conentStore) { module in
-                            
-                            VStack(spacing: 20.0) {
-                                HomeViewRow(image: module.content.image, category: module.category, description: module.content.description, countOflessons: module.content.lessons.count, timeOfLessons: module.content.time)
+                            VStack {
                                 
-                                HomeViewRow(image: module.test.image, category: module.test.image, description: module.test.description, countOflessons: module.test.questions.count, timeOfLessons: module.test.time)
+                                NavigationLink(
+                                    destination: ContentView()
+                                        .onAppear {
+                                            model.beginModuleID(module.id)
+                                        },
+                                    label: {
+                                        HomeViewRow(image: module.content.image, category: module.category, description: module.content.description, countOflessons: module.content.lessons.count, timeOfLessons: module.content.time)
+                                    })
                             }
-                           
                         }
                     }
                     .padding()
