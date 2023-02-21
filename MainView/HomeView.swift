@@ -17,8 +17,6 @@ struct HomeView: View {
                 ScrollView {
                     LazyVStack {
                         ForEach(model.conentStore) { module in
-                            VStack {
-                                
                                 NavigationLink(
                                     destination: ContentView()
                                         .onAppear {
@@ -26,8 +24,7 @@ struct HomeView: View {
                                         },
                                     label: {
                                         HomeViewRow(image: module.content.image, category: module.category, description: module.content.description, countOflessons: module.content.lessons.count, timeOfLessons: module.content.time)
-                                    })
-                            }
+                                    }).foregroundColor(.white)
                         }
                     }
                     .padding()
