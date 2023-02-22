@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeViewRow: View {
-    @EnvironmentObject var model: ContentModel
+//    @EnvironmentObject var model: ContentModel
     var image: String
     var category: String
     var description: String

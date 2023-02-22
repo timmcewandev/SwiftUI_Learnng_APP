@@ -13,28 +13,14 @@ struct ContentView: View {
         ScrollView {
             LazyVStack {
                 if module.currentModule != nil {
-                    ForEach((module.currentModule!.content.lessons)) {lesson in
-                        ZStack {
-                            Rectangle()
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                                .shadow(radius: 5)
-                                .frame(height: 66)
-                            HStack {
-                                Spacer()
-                                Text("\(lesson.id + 1)")
-                                Spacer()
-                                VStack {
-                                    Text(lesson.title)
-                                    Text(lesson.duration)
-                                }
-                                Spacer()
-                            }
-                        }
-                        
+                    ForEach(0..<module.currentModule!.content.lessons.count) { index in
+                        ContentViewRow(index: index)
+
                     }
                 }
             }
+            .padding()
+            .navigationBarTitle("Learn \(module.currentModule?.category ?? "Swifty")")
         }
     }
 }
