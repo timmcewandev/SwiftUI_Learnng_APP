@@ -24,7 +24,7 @@ struct HomeView: View {
                                         },
                                     label: {
                                         HomeViewRow(image: module.content.image, category: module.category, description: module.content.description, countOflessons: module.content.lessons.count, timeOfLessons: module.content.time)
-                                    }).foregroundColor(.white)
+                                    }).foregroundColor(.black)
                         }
                     }
                     .padding()

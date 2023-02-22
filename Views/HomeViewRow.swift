@@ -33,6 +33,7 @@ struct HomeViewRow: View {
                         .bold()
                     Text(description)
                         .font(.caption)
+                        .multilineTextAlignment(.leading)
                         .padding(.bottom, 20)
                     HStack {
                         //Num of Lessons
@@ -51,7 +52,7 @@ struct HomeViewRow: View {
                 }
                 .padding(.leading, 20)
             }
-            .padding(.horizontal, 50)
+            .padding(.horizontal, 15.0)
         }
     }
 }
