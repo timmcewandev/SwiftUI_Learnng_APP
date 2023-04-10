@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		84369D9C295A462500A71FB5 /* HomeViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84369D9B295A462500A71FB5 /* HomeViewRow.swift */; };
+		8465B65B29E3B60B004D15FE /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8465B65A29E3B60B004D15FE /* ContentDetailView.swift */; };
 		846E09F3295CD63A00EE4D34 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E09F2295CD63A00EE4D34 /* Constants.swift */; };
 		8481F50829A5C35A00333557 /* ContentViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481F50729A5C35A00333557 /* ContentViewRow.swift */; };
 		848D33C62956601E00F242C4 /* The_Learning_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848D33C52956601E00F242C4 /* The_Learning_App.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		84369D9B295A462500A71FB5 /* HomeViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRow.swift; sourceTree = "<group>"; };
+		8465B65A29E3B60B004D15FE /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
 		846E09F0295CD32B00EE4D34 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		846E09F2295CD63A00EE4D34 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8481F50729A5C35A00333557 /* ContentViewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewRow.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				848D33C72956601E00F242C4 /* HomeView.swift */,
+				8499BA08296E4BDB00452333 /* ContentView.swift */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -139,9 +142,9 @@
 		848D33D7295660A600F242C4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8499BA08296E4BDB00452333 /* ContentView.swift */,
 				84369D9B295A462500A71FB5 /* HomeViewRow.swift */,
 				8481F50729A5C35A00333557 /* ContentViewRow.swift */,
+				8465B65A29E3B60B004D15FE /* ContentDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				8499BA09296E4BDB00452333 /* ContentView.swift in Sources */,
 				848D33DB2956619800F242C4 /* ContentModel.swift in Sources */,
 				848D33E529566B4A00F242C4 /* NetworkLayer.swift in Sources */,
+				8465B65B29E3B60B004D15FE /* ContentDetailView.swift in Sources */,
 				8481F50829A5C35A00333557 /* ContentViewRow.swift in Sources */,
 				84369D9C295A462500A71FB5 /* HomeViewRow.swift in Sources */,
 				846E09F3295CD63A00EE4D34 /* Constants.swift in Sources */,

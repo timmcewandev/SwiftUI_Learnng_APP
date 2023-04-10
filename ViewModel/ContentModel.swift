@@ -9,27 +9,39 @@ import Foundation
 
 
 class ContentModel: ObservableObject {
-    @Published var conentStore: [Module] = []
+    @Published var modules: [Module] = []
     // Selected Module
     @Published var currentModule: Module?
-    static var currentModuleIndex = 0
-    var currentIndex = 0
+    var currentModuleIndex = 0
+    
+    @Published var currentLesson: Lessons?
+    var cureentLessonIndex = 0
+    
     var styleData: Data?
     
     init() {
-        self.conentStore = NetworkLayer.getInfo()
+        self.modules = NetworkLayer.getInfo()
         self.styleData = NetworkLayer.getStyleData()
     }
     
     // MARK: - Module navigation methods
     
     func beginModuleID(_ moduleID: Int) {
-        for index in 0..<conentStore.count {
-            if conentStore[index].id == moduleID {
-                currentIndex = index
+        for index in 0..<modules.count {
+            if modules[index].id == moduleID {
+                currentModuleIndex = index
                 break
             }
         }
-        currentModule = conentStore[currentIndex]
+        currentModule = modules[currentModuleIndex]
+    }
+    
+    func beginLesson(_ lessonIndex: Int) {
+        if lessonIndex < currentModule!.content.lessons.count {
+            cureentLessonIndex = lessonIndex
+        } else {
+            cureentLessonIndex = 0
+        }
+        currentLesson = currentModule!.content.lessons[cureentLessonIndex]
     }
 }

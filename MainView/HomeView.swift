@@ -16,15 +16,15 @@ struct HomeView: View {
                     .padding(.leading, 20)
                 ScrollView {
                     LazyVStack {
-                        ForEach(model.conentStore) { module in
-                                NavigationLink(
-                                    destination: ContentView()
-                                        .onAppear {
-                                            model.beginModuleID(module.id)
-                                        },
-                                    label: {
-                                        HomeViewRow(image: module.content.image, category: module.category, description: module.content.description, countOflessons: module.content.lessons.count, timeOfLessons: module.content.time)
-                                    }).foregroundColor(.black)
+                        ForEach(model.modules) { module in
+                            NavigationLink {
+                                ContentView()
+                                    .onAppear {
+                                        model.beginModuleID(module.id)
+                                    }
+                            } label: {
+                                HomeViewRow(image: module.content.image, category: module.category, description: module.content.description, countOflessons: module.content.lessons.count, timeOfLessons: module.content.time)
+                            }.foregroundColor(.black)
                         }
                     }
                     .padding()
@@ -32,8 +32,8 @@ struct HomeView: View {
             }
             .navigationTitle("Get Started")
             .navigationBarTitleDisplayMode(.large)
-        }
-
+        }.navigationViewStyle(.stack)
+        
         
     }
 }

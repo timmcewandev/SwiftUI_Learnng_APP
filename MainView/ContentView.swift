@@ -14,13 +14,18 @@ struct ContentView: View {
             LazyVStack {
                 if module.currentModule != nil {
                     ForEach(0..<module.currentModule!.content.lessons.count) { index in
-                        ContentViewRow(index: index)
-
+                        NavigationLink {
+                            ContentDetailView()
+                                .onAppear {
+                                    module.beginLesson(index)
+                                }
+                        } label: {
+                            ContentViewRow(index: index)
+                        }
                     }
                 }
             }
             .padding()
-            .navigationBarTitle("Learn \(module.currentModule?.category ?? "Swifty")")
         }
     }
 }
