@@ -15,7 +15,7 @@ class ContentModel: ObservableObject {
     var currentModuleIndex = 0
     
     @Published var currentLesson: Lessons?
-    var cureentLessonIndex = 0
+    var currentLessonIndex = 0
     
     var styleData: Data?
     
@@ -38,10 +38,34 @@ class ContentModel: ObservableObject {
     
     func beginLesson(_ lessonIndex: Int) {
         if lessonIndex < currentModule!.content.lessons.count {
-            cureentLessonIndex = lessonIndex
+            currentLessonIndex = lessonIndex
         } else {
-            cureentLessonIndex = 0
+            currentLessonIndex = 0
         }
-        currentLesson = currentModule!.content.lessons[cureentLessonIndex]
+        currentLesson = currentModule!.content.lessons[currentLessonIndex]
     }
+    
+    func nextLesson() {
+        currentLessonIndex += 1
+        
+        if currentLessonIndex < currentModule!.content.lessons.count {
+            currentLesson = currentModule?.content.lessons[currentLessonIndex]
+        } else {
+            currentLessonIndex = 0
+            currentLesson = nil
+        }
+    }
+    
+    func isThereANextLesson() -> Bool {
+        return  currentLessonIndex + 1 < currentModule!.content.lessons.count
+    }
+    
+    func getTextForNextLesson() -> String {
+        if currentModuleIndex + 1 < currentModule!.content.lessons.count {
+            let index = currentModuleIndex + 1
+            return (currentModule?.content.lessons[index].title)!
+        }
+        return ""
+    }
+
 }

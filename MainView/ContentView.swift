@@ -21,7 +21,7 @@ struct ContentView: View {
                                 }
                         } label: {
                             ContentViewRow(index: index)
-                        }
+                        }.foregroundColor(.black)
                     }
                 }
             }

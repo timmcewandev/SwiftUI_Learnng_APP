@@ -6,14 +6,45 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct ContentDetailView: View {
     @EnvironmentObject var model: ContentModel
     
     var body: some View {
         let lesson = model.currentLesson
-        Text(lesson?.title ?? "Bogus")
+        let url = URL(string: "\(Constants.baseGithubURL)\(lesson?.video ?? "")")
+        VStack {
+            if url != nil {
+                VideoPlayer(player: AVPlayer(url: (url!)))
+                    .cornerRadius(10)
+            }
+            
+            //Description on next Lesson
+            
+            
+            if model.isThereANextLesson() == true {
+                //Button
+                Button {
+                    model.nextLesson()
+                } label: {
+                    
+                    ZStack {
+                        Rectangle()
+                            .frame(height: 48)
+                            .foregroundColor(.green)
+                            .cornerRadius(10)
+                        .shadow(radius: 5)
+                        Text("Next Lesson: \(model.currentModule!.content.lessons[model.currentLessonIndex + 1].title)").foregroundColor(.white).bold()
+                    }.padding()
+            }
+            
+
+        }
+        
+        
     }
+}
 }
 
 struct ContentDetailView_Previews: PreviewProvider {
